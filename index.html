@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Choose a game to play." />
+    <title>Game Room</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0c1020;
+        color: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 15% 15%, #243670 0, transparent 35%),
+          radial-gradient(circle at 85% 85%, #3d1e67 0, transparent 35%),
+          #0c1020;
+      }
+
+      main {
+        width: min(1100px, 100%);
+        padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
+      }
+
+      h1 {
+        margin: 0 0 2rem;
+        text-align: center;
+        font-size: clamp(2rem, 6vw, 4rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        text-shadow: 0 4px 20px rgb(0 0 0 / 45%);
+      }
+
+      .games {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 3vw, 2rem);
+      }
+
+      .game {
+        display: block;
+        overflow: hidden;
+        border: 3px solid rgb(255 255 255 / 20%);
+        border-radius: 1.25rem;
+        background: #181d33;
+        box-shadow: 0 20px 45px rgb(0 0 0 / 35%);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .game:hover,
+      .game:focus-visible {
+        transform: translateY(-6px) scale(1.01);
+        border-color: #ffffff;
+        box-shadow: 0 26px 55px rgb(0 0 0 / 50%);
+        outline: none;
+      }
+
+      .game img {
+        display: block;
+        width: 100%;
+        height: clamp(260px, 39vw, 480px);
+        object-fit: cover;
+      }
+
+      .game:first-child img {
+        object-position: center;
+      }
+
+      .game:last-child img {
+        object-position: center;
+      }
+
+      @media (max-width: 680px) {
+        .games {
+          grid-template-columns: 1fr;
+        }
+
+        .game img {
+          height: auto;
+          aspect-ratio: 16 / 10;
+        }
+
+        .game:last-child img {
+          aspect-ratio: 1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .game {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Choose a Game</h1>
+      <div class="games">
+        <a class="game" href="14589.html" aria-label="Play Super Woof Bros">
+          <img
+            src="images/14589.jpg"
+            alt="Super Woof Bros"
+            width="1870"
+            height="1212"
+          />
+        </a>
+        <a class="game" href="24567.html" aria-label="Play The Chomper">
+          <img
+            src="images/24567.jpg"
+            alt="The Chomper"
+            width="2048"
+            height="2048"
+          />
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
