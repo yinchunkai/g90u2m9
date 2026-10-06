@@ -93,16 +93,10 @@
       .game img {
         display: block;
         width: 100%;
-        height: clamp(260px, 39vw, 480px);
-        object-fit: cover;
-      }
-
-      .game:first-child img {
-        object-position: center;
-      }
-
-      .game:last-child img {
-        object-position: center;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: #181d33;
       }
 
       .help-note {
@@ -137,14 +131,6 @@
           grid-template-columns: 1fr;
         }
 
-        .game img {
-          height: auto;
-          aspect-ratio: 16 / 10;
-        }
-
-        .game:last-child img {
-          aspect-ratio: 1;
-        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -171,16 +157,16 @@
           <img
             src="images/14589.jpg"
             alt="Super Woof Bros"
-            width="1870"
-            height="1212"
+            width="2400"
+            height="1792"
           />
         </a>
         <a class="game" href="24567.html" aria-label="Play The Chomper">
           <img
             src="images/24567.jpg"
             alt="The Chomper"
-            width="2048"
-            height="2048"
+            width="480"
+            height="360"
           />
         </a>
       </div>
